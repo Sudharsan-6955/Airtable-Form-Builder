@@ -1,0 +1,62 @@
+import { Link } from 'react-router-dom';
+
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            Airtable Form Builder
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Create dynamic forms connected to your Airtable bases. Build forms with conditional logic, 
+            collect responses, and sync data automatically with webhooks.
+          </p>
+          
+          <div className="flex justify-center space-x-4">
+            <Link
+              to="/login"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium"
+            >
+              Get Started
+            </Link>
+            <Link
+              to="/dashboard"
+              className="bg-white hover:bg-gray-50 text-blue-600 px-8 py-3 rounded-lg text-lg font-medium border-2 border-blue-600"
+            >
+              View Dashboard
+            </Link>
+          </div>
+
+          <div className="mt-20 grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="text-3xl mb-4">🔗</div>
+              <h3 className="text-xl font-semibold mb-2">Airtable Integration</h3>
+              <p className="text-gray-600">
+                Connect directly to your Airtable bases and tables. No manual data entry needed.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="text-3xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold mb-2">Conditional Logic</h3>
+              <p className="text-gray-600">
+                Show or hide questions based on previous answers with powerful conditional rules.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="text-3xl mb-4">🔄</div>
+              <h3 className="text-xl font-semibold mb-2">Real-time Sync</h3>
+              <p className="text-gray-600">
+                Automatic webhook synchronization keeps your data in sync between Airtable and our database.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
