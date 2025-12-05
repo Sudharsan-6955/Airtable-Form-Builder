@@ -48,11 +48,11 @@ PORT=5000
 MONGODB_URI=mongodb+srv://sudharsanV:sudharsan2006@cluster0.tixfu7h.mongodb.net/airtable-forms?retryWrites=true&w=majority&appName=Cluster0
 AIRTABLE_CLIENT_ID=a6d1c60b-eb04-4725-a628-4bfd600729d6
 AIRTABLE_CLIENT_SECRET=d88da2bcae43b9be73fa9d7f94bb95ef8635851fc81f9a591a3781f8f5749fdc
-AIRTABLE_REDIRECT_URI=https://YOUR-SERVICE-NAME.onrender.com/api/auth/airtable/callback
+AIRTABLE_REDIRECT_URI=https://airtable-form-builder-backend-wcsh.onrender.com/api/auth/airtable/callback
 JWT_SECRET=your-super-secret-jwt-key-production-2024
 JWT_EXPIRES_IN=7d
 SESSION_SECRET=your-session-secret-production-2024
-FRONTEND_URL=https://YOUR-VERCEL-APP.vercel.app
+FRONTEND_URL=https://airtable-form-builder-delta.vercel.app
 CLOUDINARY_CLOUD_NAME=airtable
 CLOUDINARY_API_KEY=196739398969157
 CLOUDINARY_API_SECRET=9Kh1DfYuGMP66lSHVwvNtt93wFc
@@ -106,12 +106,12 @@ Install Command: npm install
 Click **"Environment Variables"** and add:
 
 ```env
-VITE_API_URL=https://YOUR-RENDER-URL.onrender.com/api
+VITE_API_URL=https://airtable-form-builder-backend-wcsh.onrender.com/api
 VITE_AIRTABLE_CLIENT_ID=a6d1c60b-eb04-4725-a628-4bfd600729d6
-VITE_OAUTH_REDIRECT_URI=https://YOUR-VERCEL-APP.vercel.app/callback
+VITE_OAUTH_REDIRECT_URI=https://airtable-form-builder-delta.vercel.app/callback
 ```
 
-**Important**: Replace `YOUR-RENDER-URL` with your actual Render backend URL from Part 1!
+**Important**: The `VITE_API_URL` must point to your actual Render backend URL!
 
 ### Step 4: Deploy
 
@@ -285,8 +285,8 @@ Go back to Render dashboard → Your service → Environment:
 
 Your Airtable Form Builder is now live:
 
-- **Frontend**: https://your-app.vercel.app
-- **Backend API**: https://your-backend.onrender.com
-- **Health Check**: https://your-backend.onrender.com/health
+- **Frontend**: https://airtable-form-builder-delta.vercel.app
+- **Backend API**: https://airtable-form-builder-backend-wcsh.onrender.com
+- **Health Check**: https://airtable-form-builder-backend-wcsh.onrender.com/health
 
 Share the frontend URL with users to start collecting form responses! 🚀
