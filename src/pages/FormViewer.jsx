@@ -16,7 +16,6 @@ const FormViewer = () => {
   const [success, setSuccess] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState({});
 
-  // Watch all form values for conditional logic
   const formValues = watch();
 
   useEffect(() => {
@@ -40,11 +39,9 @@ const FormViewer = () => {
       setIsSubmitting(true);
       setError(null);
 
-      // Prepare form data with files
       const formData = new FormData();
       formData.append('answers', JSON.stringify(data));
 
-      // Add uploaded files
       Object.entries(uploadedFiles).forEach(([questionKey, files]) => {
         files.forEach(file => {
           formData.append(`file_${questionKey}`, file);
@@ -135,7 +132,6 @@ const FormViewer = () => {
     );
   }
 
-  // Get visible questions based on current answers
   const visibleQuestions = form.questions.filter(q =>
     shouldShowQuestion(q.conditionalRules, formValues)
   );

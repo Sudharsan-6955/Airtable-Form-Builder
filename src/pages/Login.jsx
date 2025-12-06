@@ -5,7 +5,6 @@ const Login = () => {
   const { initiateLogin, isLoading, error } = useAuthStore();
 
   useEffect(() => {
-    // Check for error in URL query params
     const params = new URLSearchParams(window.location.search);
     const errorParam = params.get('error');
     

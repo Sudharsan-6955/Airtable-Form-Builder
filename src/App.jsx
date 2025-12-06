@@ -15,13 +15,11 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <Routes>
-          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/callback" element={<Callback />} />
           <Route path="/forms/:formId" element={<FormViewer />} />
 
-          {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/forms/new" element={<FormBuilder />} />
@@ -29,7 +27,6 @@ function App() {
             <Route path="/forms/:formId/responses" element={<ResponseList />} />
           </Route>
 
-          {/* 404 */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

@@ -1,10 +1,4 @@
-/**
- * Conditional Logic Engine (Frontend)
- * Mirrors backend logic for real-time form rendering
- */
-
 export function shouldShowQuestion(rules, answersSoFar) {
-  // If no rules, always show the question
   if (!rules || !rules.conditions || rules.conditions.length === 0) {
     return true;
   }
@@ -13,7 +7,6 @@ export function shouldShowQuestion(rules, answersSoFar) {
     const { questionKey, operator, value } = condition;
     const answer = answersSoFar[questionKey];
 
-    // Handle missing/undefined answers
     if (answer === undefined || answer === null || answer === '') {
       return operator === 'notEquals';
     }

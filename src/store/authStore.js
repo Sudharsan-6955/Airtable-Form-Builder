@@ -12,7 +12,6 @@ const useAuthStore = create(
       isLoading: false,
       error: null,
 
-      // Set authentication data
       setAuth: (token, user) => {
         localStorage.setItem('token', token);
         set({
@@ -23,7 +22,6 @@ const useAuthStore = create(
         });
       },
 
-      // Clear authentication
       clearAuth: () => {
         localStorage.removeItem('token');
         set({
@@ -34,7 +32,6 @@ const useAuthStore = create(
         });
       },
 
-      // Fetch current user
       fetchUser: async () => {
         const token = get().token || localStorage.getItem('token');
         
@@ -43,7 +40,6 @@ const useAuthStore = create(
           return false;
         }
 
-        // Check if token is expired
         try {
           const decoded = jwtDecode(token);
           if (decoded.exp * 1000 < Date.now()) {
@@ -76,7 +72,6 @@ const useAuthStore = create(
         }
       },
 
-      // Initiate OAuth login
       initiateLogin: async () => {
         try {
           const response = await api.get('/auth/airtable');
@@ -87,7 +82,6 @@ const useAuthStore = create(
         }
       },
 
-      // Logout
       logout: async () => {
         try {
           await api.post('/auth/logout');

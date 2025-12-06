@@ -19,10 +19,7 @@ const Callback = () => {
       }
 
       if (token) {
-        // Store token
         localStorage.setItem('token', token);
-        
-        // Fetch user data
         const success = await fetchUser();
         
         if (success) {

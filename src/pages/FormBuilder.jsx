@@ -5,10 +5,8 @@ import api from '../utils/api';
 const FormBuilder = () => {
   const navigate = useNavigate();
   
-  // Step management
   const [currentStep, setCurrentStep] = useState(1);
   
-  // Form data
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -19,16 +17,13 @@ const FormBuilder = () => {
     questions: []
   });
 
-  // Airtable data
   const [bases, setBases] = useState([]);
   const [tables, setTables] = useState([]);
   const [fields, setFields] = useState([]);
   
-  // UI state
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch bases on mount
   useEffect(() => {
     fetchBases();
   }, []);
@@ -89,7 +84,6 @@ const FormBuilder = () => {
           `/airtable/bases/${formData.airtableBaseId}/tables/${tableId}/fields`
         );
         
-        // Initialize questions from supported fields
         const supportedFields = response.data.data.fields;
         const initialQuestions = supportedFields.map((field, index) => ({
           questionKey: field.name.toLowerCase().replace(/\s+/g, '_'),
@@ -197,7 +191,6 @@ const FormBuilder = () => {
       setIsLoading(true);
       setError(null);
 
-      // Filter only selected questions
       const selectedQuestions = formData.questions
         .filter(q => q.selected)
         .map(({ selected, ...rest }) => rest);
@@ -241,7 +234,6 @@ const FormBuilder = () => {
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Create New Form</h1>
 
-        {/* Progress Steps */}
         <div className="mb-8 flex items-center justify-between">
           {[1, 2, 3, 4].map((step) => (
             <div key={step} className="flex items-center flex-1">
@@ -267,7 +259,6 @@ const FormBuilder = () => {
           </div>
         )}
 
-        {/* Step 1: Basic Info & Base Selection */}
         {currentStep === 1 && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Step 1: Form Details & Base Selection</h2>
@@ -321,7 +312,6 @@ const FormBuilder = () => {
           </div>
         )}
 
-        {/* Step 2: Table Selection */}
         {currentStep === 2 && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Step 2: Select Table</h2>
@@ -355,7 +345,6 @@ const FormBuilder = () => {
           </div>
         )}
 
-        {/* Step 3: Configure Questions */}
         {currentStep === 3 && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Step 3: Configure Questions</h2>
@@ -427,7 +416,6 @@ const FormBuilder = () => {
           </div>
         )}
 
-        {/* Step 4: Conditional Logic */}
         {currentStep === 4 && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-4">Step 4: Conditional Logic (Optional)</h2>
@@ -517,7 +505,6 @@ const FormBuilder = () => {
           </div>
         )}
 
-        {/* Navigation Buttons */}
         <div className="mt-6 flex justify-between">
           <button
             onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
