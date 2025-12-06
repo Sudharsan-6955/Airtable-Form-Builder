@@ -106,7 +106,7 @@ Install Command: npm install
 Click **"Environment Variables"** and add:
 
 ```env
-VITE_API_URL=https://airtable-form-builder-backend-wcsh.onrender.com/api
+VITE_API_URL=https://airtable-form-builder-backend-9xbu.onrender.com/api
 VITE_AIRTABLE_CLIENT_ID=a6d1c60b-eb04-4725-a628-4bfd600729d6
 VITE_OAUTH_REDIRECT_URI=https://airtable-form-builder-delta.vercel.app/callback
 ```
@@ -286,7 +286,7 @@ Go back to Render dashboard → Your service → Environment:
 Your Airtable Form Builder is now live:
 
 - **Frontend**: https://airtable-form-builder-delta.vercel.app
-- **Backend API**: https://airtable-form-builder-backend-wcsh.onrender.com
-- **Health Check**: https://airtable-form-builder-backend-wcsh.onrender.com/health
+- **Backend API**: https://airtable-form-builder-backend-9xbu.onrender.com
+- **Health Check**: https://airtable-form-builder-backend-9xbu.onrender.com/health
 
 Share the frontend URL with users to start collecting form responses! 🚀
