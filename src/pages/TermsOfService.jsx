@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 
 const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
         <p className="text-sm text-gray-600 mb-8">Last Updated: December 7, 2025</p>
@@ -128,7 +126,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">15. Contact Information</h2>
             <p className="text-gray-700 leading-relaxed">
-              If you have any questions about these Terms, please contact us at: <a href="mailto:support@airtableformbuilder.com" className="text-blue-600 hover:underline">support@airtableformbuilder.com</a>
+              If you have any questions about these Terms, please contact us at: <a href="mailto:sudharsan638294@gmail.com" className="text-blue-600 hover:underline">sudharsan638294@gmail.com</a>
             </p>
           </section>
         </div>
