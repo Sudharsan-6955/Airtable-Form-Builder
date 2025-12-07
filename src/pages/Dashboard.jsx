@@ -37,6 +37,15 @@ const Dashboard = () => {
     }
   };
 
+  const handleToggleActive = async (formId, isActive) => {
+    try {
+      await api.put(`/forms/${formId}`, { isActive: !isActive });
+      setForms(forms.map(f => f._id === formId ? { ...f, isActive: !isActive } : f));
+    } catch (err) {
+      alert('Failed to update form status: ' + err.message);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -160,6 +169,16 @@ const Dashboard = () => {
                   >
                     Edit
                   </Link>
+                  <button
+                    onClick={() => handleToggleActive(form._id, form.isActive)}
+                    className={`flex-1 px-4 py-2 rounded text-sm font-medium ${
+                      form.isActive
+                        ? 'bg-yellow-50 hover:bg-yellow-100 text-yellow-700'
+                        : 'bg-green-50 hover:bg-green-100 text-green-700'
+                    }`}
+                  >
+                    {form.isActive ? 'Deactivate' : 'Activate'}
+                  </button>
                   <button
                     onClick={() => handleDelete(form._id)}
                     className="flex-1 bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded text-sm font-medium"
