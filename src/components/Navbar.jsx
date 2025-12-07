@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuthStore from '../store/authStore';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { isAuthenticated, user, logout } = useAuthStore();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/');
+  };
 
   return (
     <nav className="bg-white shadow-sm border-b">
@@ -38,7 +44,7 @@ const Navbar = () => {
                   {user?.name || user?.email}
                 </span>
                 <button
-                  onClick={logout}
+                  onClick={handleLogout}
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium"
                 >
                   Logout

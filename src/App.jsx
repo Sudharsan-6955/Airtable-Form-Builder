@@ -22,13 +22,13 @@ function App() {
           <Route path="/callback" element={<Callback />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/forms/:formId" element={<FormViewer />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/forms/new" element={<FormBuilder />} />
             <Route path="/forms/:formId/edit" element={<FormBuilder />} />
             <Route path="/forms/:formId/responses" element={<ResponseList />} />
+            <Route path="/forms/:formId" element={<FormViewer />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
