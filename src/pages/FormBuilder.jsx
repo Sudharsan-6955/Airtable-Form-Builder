@@ -31,10 +31,19 @@ const FormBuilder = () => {
   const fetchBases = async () => {
     try {
       setIsLoading(true);
+      setError(null);
+      console.log('Fetching bases from:', '/airtable/bases');
       const response = await api.get('/airtable/bases');
-      setBases(response.data.data);
+      console.log('Bases response:', response.data);
+      
+      if (!response.data.data || response.data.data.length === 0) {
+        setError('⚠️ No bases found. Create a base in Airtable first, then refresh.');
+      }
+      
+      setBases(response.data.data || []);
     } catch (err) {
-      setError('Failed to fetch bases: ' + err.message);
+      console.error('Error fetching bases:', err);
+      setError('❌ Failed to fetch bases: ' + (err.message || 'Unknown error'));
     } finally {
       setIsLoading(false);
     }
