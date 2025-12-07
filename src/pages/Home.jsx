@@ -54,6 +54,22 @@ const Home = () => {
             </div>
           </div>
 
+          <div className="mt-16 bg-white rounded-lg shadow-md p-6 text-left">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Public Form Embed (no Airtable account needed)</h2>
+            <p className="text-gray-600 mb-4">
+              Anyone can view and submit this embedded form. Submissions go straight into your Airtable base.
+            </p>
+            <div className="w-full" style={{ minHeight: '640px' }}>
+              <iframe
+                className="w-full h-full rounded border border-gray-200"
+                src="https://airtable.com/embed/apphJ6R60sok3YYyA/pagHAFY57OewE9rTA/form"
+                title="Public Airtable Form"
+                frameBorder="0"
+                style={{ background: 'transparent', minHeight: '640px' }}
+              ></iframe>
+            </div>
+          </div>
+
           <footer className="mt-20 pt-8 border-t border-gray-200">
             <div className="flex justify-center space-x-6 text-sm text-gray-600">
               <Link to="/terms-of-service" className="hover:text-blue-600">
