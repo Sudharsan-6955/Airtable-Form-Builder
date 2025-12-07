@@ -59,13 +59,14 @@ const Home = () => {
             <p className="text-gray-600 mb-4">
               Anyone can view and submit this embedded form. Submissions go straight into your Airtable base.
             </p>
-            <div className="w-full" style={{ minHeight: '640px' }}>
+            <div className="w-full" style={{ minHeight: '533px' }}>
               <iframe
-                className="w-full h-full rounded border border-gray-200"
-                src="https://airtable.com/embed/apphJ6R60sok3YYyA/pagHAFY57OewE9rTA/form"
-                title="Public Airtable Form"
+                className="airtable-embed w-full rounded"
+                src="https://airtable.com/embed/apphJ6R60sok3YYyA/shrLvXby9TFdbETjH"
                 frameBorder="0"
-                style={{ background: 'transparent', minHeight: '640px' }}
+                width="100%"
+                height="533"
+                style={{ background: 'transparent', border: '1px solid #ccc' }}
               ></iframe>
             </div>
           </div>
