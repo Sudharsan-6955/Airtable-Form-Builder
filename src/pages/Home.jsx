@@ -62,7 +62,7 @@ const Home = () => {
             <div className="w-full" style={{ minHeight: '533px' }}>
               <iframe
                 className="airtable-embed w-full rounded"
-                src="https://airtable.com/embed/apphJ6R60sok3YYyA/shrLvXby9TFdbETjH?layout=card"
+                src="https://airtable.com/embed/apphJ6R60sok3YYyA/pagHAFY57OewE9rTA/form"
                 frameBorder="0"
                 width="100%"
                 height="533"
