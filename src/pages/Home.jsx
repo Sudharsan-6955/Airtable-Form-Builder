@@ -53,6 +53,30 @@ const Home = () => {
               </p>
             </div>
           </div>
+
+          <footer className="mt-20 pt-8 border-t border-gray-200">
+            <div className="flex justify-center space-x-6 text-sm text-gray-600">
+              <Link to="/terms-of-service" className="hover:text-blue-600">
+                Terms of Service
+              </Link>
+              <span>•</span>
+              <Link to="/privacy-policy" className="hover:text-blue-600">
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <a 
+                href="https://github.com/Sudharsan-6955/Airtable-Form-Builder" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+              >
+                GitHub
+              </a>
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              © 2025 Airtable Form Builder. All rights reserved.
+            </p>
+          </footer>
         </div>
       </div>
     </div>
